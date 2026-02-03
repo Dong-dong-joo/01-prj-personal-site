@@ -4,18 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donghyeon Kim | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
-      <!-- Home icon (instead of clicking your name) -->
-      <a class="home-icon" href="#home" aria-label="Go to Home">
-        <img src="home.svg" alt="Home" class="icon">
-      </a>
-
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -27,7 +22,7 @@
   </header>
 
   <main id="home">
-    <!-- HERO -->
+    <!-- HERO (HOME) -->
     <section class="hero">
       <div class="container hero-inner">
         <p class="kicker">Web Development Student</p>
@@ -43,8 +38,8 @@
 
         <div class="buttons">
           <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="https://github.com/Dong-dong-joo" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/Dong-dong-joo" target="_blank">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -54,9 +49,9 @@
       <div class="container narrow">
         <h2>About</h2>
         <p>
-          Write 3–5 sentences here. Example: I’m learning front-end development and I enjoy
-          building clean layouts and improving them step-by-step. I’m currently focused on
-          HTML, CSS, and JavaScript.
+          I’m learning front-end development and enjoy building clean layouts
+          and improving them step by step. I’m currently focused on HTML, CSS,
+          and JavaScript.
         </p>
 
         <div class="info-row">
@@ -80,7 +75,7 @@
     <section id="skills" class="section alt">
       <div class="container narrow">
         <h2>Skills</h2>
-        <p class="muted">Edit these anytime as you learn.</p>
+        <p class="muted">These will grow as I learn more.</p>
 
         <div class="chips">
           <span class="chip">HTML</span>
@@ -88,68 +83,45 @@
           <span class="chip">Responsive Design</span>
           <span class="chip">Flexbox</span>
           <span class="chip">JavaScript (learning)</span>
-          <span class="chip">Git / GitHub (learning)</span>
+          <span class="chip">Git / GitHub</span>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS (with arrows) -->
+    <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container narrow">
         <h2>Projects</h2>
         <p class="muted">Use the arrows to browse projects.</p>
 
         <div class="project-slider">
-          <!-- Left arrow -->
-          <button class="arrow" id="prevBtn" aria-label="Previous project">
-            <img src="arrow-left.svg" alt="" class="icon">
-          </button>
+          <button class="arrow" id="prevBtn">&lt;</button>
 
-          <!-- Slides -->
-          <div class="slides" id="slides">
+          <div class="slides">
             <article class="slide active">
               <h3>Project 1 — Landing Page</h3>
               <p class="muted">
                 A clean landing page with responsive layout and simple styling.
               </p>
-              <div class="links">
-                <a href="#" target="_blank" rel="noopener">Demo</a>
-                <a href="#" target="_blank" rel="noopener">Code</a>
-              </div>
             </article>
 
             <article class="slide">
-              <h3>Project 2 — Portfolio Section</h3>
+              <h3>Project 2 — Portfolio Layout</h3>
               <p class="muted">
-                Reusable sections and consistent spacing/typography.
+                A minimal portfolio layout using reusable sections.
               </p>
-              <div class="links">
-                <a href="#" target="_blank" rel="noopener">Demo</a>
-                <a href="#" target="_blank" rel="noopener">Code</a>
-              </div>
             </article>
 
             <article class="slide">
               <h3>Project 3 — JavaScript Mini App</h3>
               <p class="muted">
-                A small interactive app using DOM manipulation (coming soon).
+                A small interactive app using JavaScript (coming soon).
               </p>
-              <div class="links">
-                <a href="#" target="_blank" rel="noopener">Demo</a>
-                <a href="#" target="_blank" rel="noopener">Code</a>
-              </div>
             </article>
           </div>
 
-          <!-- Right arrow -->
-          <button class="arrow" id="nextBtn" aria-label="Next project">
-            <img src="arrow-right.svg" alt="" class="icon">
-          </button>
+          <button class="arrow" id="nextBtn">&gt;</button>
         </div>
-
-        <p class="muted small">
-          Tip: To add a project, copy one <code>&lt;article class="slide"&gt;</code> block.
-        </p>
       </div>
     </section>
 
@@ -157,15 +129,15 @@
     <section id="contact" class="section alt">
       <div class="container narrow">
         <h2>Contact</h2>
-        <p class="muted">Add your email here (or remove it if you don’t want it public).</p>
+        <p class="muted">Feel free to reach out.</p>
 
         <div class="contact-box">
           <p><strong>Email:</strong> youremail@example.com</p>
           <p><strong>GitHub:</strong>
-            <a href="https://github.com/Dong-dong-joo" target="_blank" rel="noopener">Dong-dong-joo</a>
+            <a href="https://github.com/Dong-dong-joo" target="_blank">Dong-dong-joo</a>
           </p>
           <p><strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank" rel="noopener">Donghyeon Kim</a>
+            <a href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank">Donghyeon Kim</a>
           </p>
         </div>
       </div>
@@ -179,12 +151,9 @@
     </div>
   </footer>
 
-  <!-- SLIDER SCRIPT (makes < > work) -->
+  <!-- PROJECT SLIDER SCRIPT -->
   <script>
     const slides = document.querySelectorAll(".slide");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-
     let current = 0;
 
     function showSlide(index) {
@@ -193,15 +162,13 @@
       slides[current].classList.add("active");
     }
 
-    prevBtn.addEventListener("click", () => {
-      const nextIndex = (current - 1 + slides.length) % slides.length;
-      showSlide(nextIndex);
-    });
+    document.getElementById("prevBtn").onclick = () => {
+      showSlide((current - 1 + slides.length) % slides.length);
+    };
 
-    nextBtn.addEventListener("click", () => {
-      const nextIndex = (current + 1) % slides.length;
-      showSlide(nextIndex);
-    });
+    document.getElementById("nextBtn").onclick = () => {
+      showSlide((current + 1) % slides.length);
+    };
   </script>
 </body>
 </html>
