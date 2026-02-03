@@ -1,5 +1,9 @@
 * { box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -20,8 +24,17 @@ a { color: inherit; }
   margin: 0 auto;
 }
 
-.muted {
-  color: #6b7280;
+.muted { color: #6b7280; }
+
+.icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* Make anchor jumps not hide behind sticky header */
+section {
+  scroll-margin-top: 80px;
 }
 
 /* ===== Header ===== */
@@ -30,14 +43,23 @@ a { color: inherit; }
   top: 0;
   background: rgba(255,255,255,0.95);
   border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .header-inner {
   padding: 14px 0;
 }
 
+/* Nav */
+.nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .nav a {
-  margin-right: 16px;
   text-decoration: none;
   font-size: 14px;
   color: #374151;
@@ -52,25 +74,32 @@ a { color: inherit; }
   padding: 90px 0 70px;
 }
 
+.hero-inner {
+  width: min(760px, 92%);
+  margin: 0 auto;
+}
+
 .kicker {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 12px;
   color: #6b7280;
+  margin: 0 0 12px;
 }
 
 .title {
   font-size: 44px;
-  margin: 12px 0;
+  line-height: 1.1;
+  margin: 0 0 14px;
 }
 
 .subtitle {
-  font-size: 18px;
+  margin: 0 0 20px;
   color: #4b5563;
+  font-size: 18px;
 }
 
 .buttons {
-  margin-top: 16px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -78,18 +107,25 @@ a { color: inherit; }
 
 /* ===== Buttons ===== */
 .btn {
+  display: inline-block;
+  text-decoration: none;
   padding: 10px 14px;
-  border: 1px solid #e5e7eb;
   border-radius: 10px;
+  border: 1px solid #e5e7eb;
   font-weight: 700;
   font-size: 14px;
-  text-decoration: none;
+  background: #ffffff;
 }
+
+.btn:hover { background: #f9fafb; }
 
 .btn.primary {
   background: #111827;
   color: white;
+  border-color: #111827;
 }
+
+.btn.primary:hover { opacity: 0.92; }
 
 /* ===== Sections ===== */
 .section {
@@ -97,13 +133,11 @@ a { color: inherit; }
   border-top: 1px solid #f3f4f6;
 }
 
-.section.alt {
-  background: #f9fafb;
-}
+.section.alt { background: #f9fafb; }
 
-h2 {
-  font-size: 22px;
-}
+h2 { margin: 0 0 12px; font-size: 22px; }
+
+p { margin: 0 0 12px; }
 
 /* ===== About ===== */
 .info-row {
@@ -117,22 +151,25 @@ h2 {
   border: 1px solid #e5e7eb;
   padding: 12px;
   border-radius: 12px;
+  background: #ffffff;
 }
 
 .label {
+  margin: 0;
   font-size: 12px;
   color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.value {
-  font-weight: 800;
-}
+.value { margin: 6px 0 0; font-weight: 800; }
 
 /* ===== Skills ===== */
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 14px;
 }
 
 .chip {
@@ -140,9 +177,10 @@ h2 {
   padding: 8px 10px;
   border-radius: 999px;
   font-size: 14px;
+  background: #ffffff;
 }
 
-/* ===== Projects ===== */
+/* ===== Projects Slider ===== */
 .project-slider {
   margin-top: 18px;
   display: grid;
@@ -152,34 +190,56 @@ h2 {
 }
 
 .arrow {
-  font-size: 20px;
-  padding: 10px 14px;
-  border: 1px solid #e5e7eb;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
+  border: 1px solid #e5e7eb;
   background: #ffffff;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.arrow:hover { background: #f9fafb; }
 
 .slides {
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   padding: 16px;
+  background: #ffffff;
+  min-height: 140px;
 }
 
-.slide {
-  display: none;
+.slide { display: none; }
+.slide.active { display: block; }
+
+.slide h3 { margin: 0 0 6px; font-size: 16px; }
+
+.links a {
+  text-decoration: none;
+  font-weight: 800;
+  margin-right: 12px;
+  color: #111827;
+  font-size: 14px;
 }
 
-.slide.active {
-  display: block;
-}
+.links a:hover { text-decoration: underline; }
 
 /* ===== Contact ===== */
 .contact-box {
   border: 1px solid #e5e7eb;
   padding: 14px;
   border-radius: 14px;
+  background: #ffffff;
 }
+
+.contact-box a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contact-box a:hover { text-decoration: underline; }
 
 /* ===== Footer ===== */
 .footer {
@@ -189,11 +249,11 @@ h2 {
 
 /* ===== Mobile ===== */
 @media (max-width: 720px) {
-  .info-row {
-    grid-template-columns: 1fr;
-  }
+  .title { font-size: 34px; }
 
-  .project-slider {
-    grid-template-columns: 1fr;
-  }
+  .info-row { grid-template-columns: 1fr; }
+
+  .project-slider { grid-template-columns: 1fr; }
+
+  .arrow { width: 100%; }
 }
