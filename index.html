@@ -4,29 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donghyeon Kim | Portfolio</title>
-
-  <!-- CACHE BUSTING -->
-  <link rel="stylesheet" href="style.css?v=999" />
+  <link rel="stylesheet" href="style.css?v=1000" />
 </head>
 
 <body>
+  <!-- HEADER -->
   <header class="header">
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <!-- HOME -->
+    <!-- HERO (HOME) -->
     <section id="home" class="hero">
-      <div class="container">
+      <div class="container hero-inner">
         <p class="kicker">WEB DEVELOPMENT STUDENT</p>
 
-        <h1>
+        <h1 class="title">
           Hi, I’m Donghyeon Kim.<br />
           Building clean, simple websites as I learn.
         </h1>
@@ -37,10 +38,15 @@
 
         <div class="buttons">
           <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="https://github.com/Dong-dong-joo" target="_blank">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/Dong-dong-joo" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
+
+      <!-- WAVE -->
+      <svg class="hero-wave" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,80 C240,140 480,20 720,70 C960,120 1200,40 1440,90 L1440,160 L0,160 Z"></path>
+      </svg>
     </section>
 
     <!-- ABOUT -->
@@ -48,10 +54,24 @@
       <div class="container narrow">
         <h2>About</h2>
         <p>
-          I’m learning front-end development and enjoy building clean layouts
-          and improving them step by step. I’m currently focused on HTML, CSS,
-          and JavaScript.
+          I’m learning front-end development and enjoy building clean layouts and improving them step by step.
+          I’m currently focused on HTML, CSS, and JavaScript.
         </p>
+
+        <div class="info-row">
+          <div class="info">
+            <p class="label">Name</p>
+            <p class="value">Donghyeon Kim</p>
+          </div>
+          <div class="info">
+            <p class="label">GitHub</p>
+            <p class="value">@Dong-dong-joo</p>
+          </div>
+          <div class="info">
+            <p class="label">Focus</p>
+            <p class="value">Front-end basics</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -59,11 +79,15 @@
     <section id="skills" class="section alt">
       <div class="container narrow">
         <h2>Skills</h2>
+        <p class="muted">These will grow as I learn more.</p>
+
         <div class="chips">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Flexbox</span>
-          <span>JavaScript</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">Responsive Design</span>
+          <span class="chip">Flexbox</span>
+          <span class="chip">JavaScript (learning)</span>
+          <span class="chip">Git / GitHub</span>
         </div>
       </div>
     </section>
@@ -71,28 +95,75 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container narrow">
-        <h2>Projects</h2>
-
-        <div class="project-slider">
-          <button id="prevBtn">◀</button>
-
-          <div class="slides">
-            <div class="slide active">
-              <h3>Project One</h3>
-              <p>Landing page project.</p>
-            </div>
-            <div class="slide">
-              <h3>Project Two</h3>
-              <p>Portfolio layout.</p>
-            </div>
-            <div class="slide">
-              <h3>Project Three</h3>
-              <p>JavaScript mini app.</p>
-            </div>
+        <div class="projects-header">
+          <div>
+            <h2>Projects</h2>
+            <p class="muted">Use the arrows to browse projects.</p>
           </div>
 
-          <button id="nextBtn">▶</button>
+          <div class="project-counter" id="projectCounter">1 / 3</div>
         </div>
+
+        <div class="project-slider">
+          <button class="arrow" id="prevBtn" aria-label="Previous project">
+            <img src="arrow-left.svg" alt="" class="icon">
+          </button>
+
+          <div class="slides" id="slides">
+            <article class="slide active">
+              <div class="project-card">
+                <div class="badge">HTML • CSS</div>
+                <h3>Project 1 — Landing Page</h3>
+                <p class="muted">
+                  A clean landing page with responsive layout and simple styling.
+                </p>
+
+                <div class="links">
+                  <a href="#" target="_blank" rel="noopener">Demo</a>
+                  <a href="#" target="_blank" rel="noopener">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="project-card">
+                <div class="badge">Layout</div>
+                <h3>Project 2 — Portfolio Layout</h3>
+                <p class="muted">
+                  A minimal portfolio layout using reusable sections and consistent spacing.
+                </p>
+
+                <div class="links">
+                  <a href="#" target="_blank" rel="noopener">Demo</a>
+                  <a href="#" target="_blank" rel="noopener">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="project-card">
+                <div class="badge">JavaScript</div>
+                <h3>Project 3 — JavaScript Mini App</h3>
+                <p class="muted">
+                  A small interactive app using DOM manipulation (coming soon).
+                </p>
+
+                <div class="links">
+                  <a href="#" target="_blank" rel="noopener">Demo</a>
+                  <a href="#" target="_blank" rel="noopener">Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="arrow" id="nextBtn" aria-label="Next project">
+            <img src="arrow-right.svg" alt="" class="icon">
+          </button>
+        </div>
+
+        <p class="muted small tip">
+          Tip: To add a project, copy one <code>&lt;article class="slide"&gt;</code> block.
+        </p>
       </div>
     </section>
 
@@ -100,30 +171,73 @@
     <section id="contact" class="section alt">
       <div class="container narrow">
         <h2>Contact</h2>
-        <p>Email: youremail@example.com</p>
+        <p class="muted">Feel free to reach out.</p>
+
+        <div class="contact-box">
+          <p><strong>Email:</strong> youremail@example.com</p>
+          <p><strong>GitHub:</strong>
+            <a href="https://github.com/Dong-dong-joo" target="_blank" rel="noopener">Dong-dong-joo</a>
+          </p>
+          <p><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank" rel="noopener">Donghyeon Kim</a>
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Donghyeon Kim</p>
+    <div class="container narrow">
+      <p class="footer-text">© 2026 Donghyeon Kim • Built with HTML + CSS</p>
+    </div>
   </footer>
 
+  <!-- NAV ACTIVE + SLIDER -->
   <script>
+    // ===== Project slider =====
     const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const counter = document.getElementById("projectCounter");
     let current = 0;
 
-    function showSlide(i) {
-      slides[current].classList.remove("active");
-      current = i;
-      slides[current].classList.add("active");
+    function setCounter() {
+      counter.textContent = (current + 1) + " / " + slides.length;
     }
 
-    document.getElementById("prevBtn").onclick = () =>
-      showSlide((current - 1 + slides.length) % slides.length);
+    function showSlide(index) {
+      slides[current].classList.remove("active");
+      current = index;
+      slides[current].classList.add("active");
+      setCounter();
+    }
 
-    document.getElementById("nextBtn").onclick = () =>
+    prevBtn.addEventListener("click", () => {
+      showSlide((current - 1 + slides.length) % slides.length);
+    });
+
+    nextBtn.addEventListener("click", () => {
       showSlide((current + 1) % slides.length);
+    });
+
+    setCounter();
+
+    // ===== Nav active section =====
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove("active"));
+          const active = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add("active");
+        }
+      });
+    }, { threshold: 0.55 });
+
+    sections.forEach(sec => obs.observe(sec));
   </script>
 </body>
 </html>
