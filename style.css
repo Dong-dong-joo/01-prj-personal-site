@@ -1,1 +1,251 @@
-/* Add you CSS here */
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(760px, 92%);
+  margin: 0 auto;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.nav a {
+  text-decoration: none;
+  margin-left: 16px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 90px 0 70px;
+}
+
+.hero-inner {
+  width: min(760px, 92%);
+  margin: 0 auto;
+}
+
+.kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 12px;
+}
+
+.title {
+  font-size: 44px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #4b5563;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-weight: 700;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.btn:hover {
+  background: #f9fafb;
+}
+
+.btn.primary {
+  background: #111827;
+  color: white;
+  border-color: #111827;
+}
+
+.btn.primary:hover {
+  opacity: 0.92;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 70px 0;
+  border-top: 1px solid #f3f4f6;
+}
+
+.section.alt {
+  background: #f9fafb;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+p { margin: 0 0 12px; }
+
+/* ===== About info row ===== */
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.info {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.value {
+  margin: 6px 0 0;
+  font-weight: 800;
+}
+
+/* ===== Skills ===== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.chip {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 8px 10px;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+/* ===== Projects ===== */
+.project-list {
+  margin-top: 22px;
+  display: grid;
+  gap: 14px;
+}
+
+.project {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.project h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.links a {
+  text-decoration: none;
+  font-weight: 800;
+  margin-left: 10px;
+  color: #111827;
+  font-size: 14px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Contact ===== */
+.contact-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 720px) {
+  .title { font-size: 34px; }
+
+  .info-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .links a {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
