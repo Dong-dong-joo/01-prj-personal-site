@@ -155,4 +155,53 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section alt">
-      <
+      <div class="container narrow">
+        <h2>Contact</h2>
+        <p class="muted">Add your email here (or remove it if you don’t want it public).</p>
+
+        <div class="contact-box">
+          <p><strong>Email:</strong> youremail@example.com</p>
+          <p><strong>GitHub:</strong>
+            <a href="https://github.com/Dong-dong-joo" target="_blank" rel="noopener">Dong-dong-joo</a>
+          </p>
+          <p><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/donghyeon-kim-403a5b2b5/" target="_blank" rel="noopener">Donghyeon Kim</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container narrow">
+      <p class="muted">© 2026 Donghyeon Kim • Built with HTML + CSS</p>
+    </div>
+  </footer>
+
+  <!-- SLIDER SCRIPT (makes < > work) -->
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let current = 0;
+
+    function showSlide(index) {
+      slides[current].classList.remove("active");
+      current = index;
+      slides[current].classList.add("active");
+    }
+
+    prevBtn.addEventListener("click", () => {
+      const nextIndex = (current - 1 + slides.length) % slides.length;
+      showSlide(nextIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      const nextIndex = (current + 1) % slides.length;
+      showSlide(nextIndex);
+    });
+  </script>
+</body>
+</html>
